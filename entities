@@ -1,0 +1,88 @@
+{
+  "name": "SwimRecord",
+  "type": "object",
+  "properties": {
+    "location": {
+      "type": "string",
+      "description": "\u6cf3\u3044\u3060\u5834\u6240"
+    },
+    "pool_size": {
+      "type": "string",
+      "enum": [
+        "25m",
+        "50m"
+      ],
+      "description": "\u30d7\u30fc\u30eb\u30b5\u30a4\u30ba"
+    },
+    "stroke": {
+      "type": "string",
+      "enum": [
+        "\u81ea\u7531\u5f62",
+        "\u80cc\u6cf3\u304e",
+        "\u5e73\u6cf3\u304e",
+        "\u30d0\u30bf\u30d5\u30e9\u30a4",
+        "\u500b\u4eba\u30e1\u30c9\u30ec\u30fc"
+      ],
+      "description": "\u6cf3\u6cd5"
+    },
+    "distance": {
+      "type": "number",
+      "enum": [
+        25,
+        50,
+        100,
+        200,
+        400,
+        800,
+        1500
+      ],
+      "description": "\u8ddd\u96e2\uff08\u30e1\u30fc\u30c8\u30eb\uff09"
+    },
+    "result_time": {
+      "type": "string",
+      "description": "\u7d50\u679c\u30bf\u30a4\u30e0\uff08mm:ss.ms\u5f62\u5f0f\uff09"
+    },
+    "result_seconds": {
+      "type": "number",
+      "description": "\u7d50\u679c\u30bf\u30a4\u30e0\uff08\u79d2\u63db\u7b97\u3001\u30bd\u30fc\u30c8\u7528\uff09"
+    },
+    "is_best": {
+      "type": "boolean",
+      "default": false,
+      "description": "\u30d9\u30b9\u30c8\u30bf\u30a4\u30e0\u304b\u3069\u3046\u304b"
+    },
+    "lap_times": {
+      "type": "array",
+      "description": "\u30e9\u30c3\u30d7\u30bf\u30a4\u30e0\uff08100m\u4ee5\u4e0a\u306e\u5834\u5408\uff09",
+      "items": {
+        "type": "object",
+        "properties": {
+          "lap_number": {
+            "type": "number"
+          },
+          "time": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "\u8a18\u9332\u65e5"
+    },
+    "memo": {
+      "type": "string",
+      "description": "\u30e1\u30e2"
+    }
+  },
+  "required": [
+    "location",
+    "pool_size",
+    "stroke",
+    "distance",
+    "result_time",
+    "result_seconds",
+    "date"
+  ]
+}
